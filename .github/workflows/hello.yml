@@ -15,5 +15,5 @@ jobs:
       - name: print date
         run: date
 
-      - list files
+      - name: list files
         run: ls
