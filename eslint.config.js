@@ -10,7 +10,9 @@ module.exports = [
       'eslint.config.js',
       '.eslintrc.js',
       'node_modules/**',
-      'dist/**'
+      'dist/**',
+      'tests/**',
+      'playwright.config.js'	
     ]
   },
   js.configs.recommended,
@@ -34,6 +36,26 @@ module.exports = [
       'arrow-spacing': ['error', { 'before': true, 'after': true }],
       'no-console': 0
     }
+  },
+  {
+    files: ['jest.setup.js'],
+    languageOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
+    files: ['playwright.config.js'],
+    languageOptions: {
+      ecmaVersion: 2018,
+      sourceType: "commonjs",
+      globals: {
+        ...globals.node,
+      },
+    },
   },
   {
     files: ['src/**/*.{js,jsx}', 'test/**/*.{js,jsx}'],
